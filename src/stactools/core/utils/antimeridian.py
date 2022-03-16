@@ -12,6 +12,9 @@ def split(polygon: Polygon) -> Optional[MultiPolygon]:
     If the polygon does not cross the antimeridian, returns None. Only handles
     exterior rings (can't handle interior).
 
+    NOTE: Will not work on polygons that enclose the north or south poles.
+    TODO: Fix this
+
     Args:
         polygon (shapely.geometry.Polygon): The input polygon.
 
@@ -56,6 +59,9 @@ def normalize(polygon: Polygon) -> Polygon:
 
     Inspired by
     https://towardsdatascience.com/around-the-world-in-80-lines-crossing-the-antimeridian-with-python-and-shapely-c87c9b6e1513.
+
+    NOTE: Will not work on polygons that enclose the north or south poles.
+    TODO: Fix this
 
     Args:
         polygon (shapely.geometry.Polygon): The input polygon.
